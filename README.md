@@ -28,8 +28,8 @@ domains - whois
 
 Project use python 2.7
 
-`pip install -r requirements.txt`
+    pip install -r requirements.txt
 
 ## Usage
 
-python iocsint.py
+    python iocsint.py
