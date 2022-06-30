@@ -12,7 +12,7 @@ In input a csv file containing IP and/or domains name is needed.
 
 ## Python librairies 
 
-they are used to search data :
+they are used to search data from the Ioc :
 
 ip - with geoip from MaxMind
 
@@ -28,7 +28,7 @@ domains - whois
 
 ## Prerequisite
 
-Project use python 2.7
+Project is using python 2.7
 
     pip install -r requirements.txt
 
