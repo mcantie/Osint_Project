@@ -2,11 +2,14 @@ import csv
 import codecs
 import whois
 import re
+import json
 
 from geoip import geolite2
 
 ip = []
 domains = []
+tojson = []
+dict_ip = {}
 sample = "sample.csv"
 
 regexip = "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
@@ -41,25 +44,49 @@ def extract_csv(csvfile, regexip, regexdomains):
                 if match_domains:
                     domains.append(row)
 
-    print("ip :",ip)
-    print("domains :", domains)
-        
+
+def output_to_json(json_string): 
+
+    with open('json_ip_data.json', 'w') as file :
+        file.write(json_string)
+
 
 def geoip():
-    match = geolite2.lookup('8.8.8.8')
-    match.country
-    print(match.country)
+
+    for row in ip:
+        for cell in row:
+            match = geolite2.lookup(cell)
+            dict_geoip = {
+                "ip": match.ip,
+                "country" : match.country,
+                "timezone" : match.timezone,
+                "continent" : match.continent,
+                "location" : match.location
+            }
+            dict_temp = dict_geoip.copy()
+            tojson.append(dict_temp)
+
+    json_string = json.dumps(tojson)
+    print(json_string)
+    return json_string
+
 
 
 def domain():
-    w = whois.whois('utt.fr')
-    print(w)
+
+    for row in domains:
+        for cell in row:
+            match = whois.whois(cell)
+            print(match)
 
 
 def main():
 
     printAscii()
     extract_csv(sample, regexip, regexdomains)
+    json_string = geoip()
+    #domain()
+    output_to_json(json_string)
     
 
 if __name__ == '__main__':
