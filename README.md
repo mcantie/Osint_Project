@@ -23,6 +23,7 @@ domains - whois
 
 ### Domains output :
 
+![image](https://user-images.githubusercontent.com/50552002/176765484-cdc47a7f-80cd-4328-a14d-0552ddf6778a.png)
 
 ## Prerequisite
 
