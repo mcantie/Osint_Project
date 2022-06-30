@@ -15,6 +15,7 @@ In input a csv file containing IP and/or domains name is needed.
 they are used to search data :
 
 ip - with geoip from MaxMind
+
 domains - whois
 
 ### IP output :
