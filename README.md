@@ -28,7 +28,7 @@ domains - whois
 
 Project use python 2.7
 
-<code>pip install -r requirements.txt</code>
+'pip install -r requirements.txt'
 
 ## Usage
 
