@@ -4,7 +4,7 @@ Osint Project for UTT (Mastère expert forensic &amp; Cybersecurity)
 ![image](https://user-images.githubusercontent.com/50552002/176748975-615e85b8-11bb-4fb7-8706-5aa6ee8b03e2.png)
 
 
-IOCSINT is a project used to extract data from ioc (ip + domains) and converting them into a json to analyze and ingest them if needed tools (ex : elk).
+IOCSINT is a project used to extract data from ioc (ip + domains) and converting them into a json to analyze and ingest them if needed in tools (ex : elk).
 
 In input a csv file containing IP and/or domains name is needed. 
 
