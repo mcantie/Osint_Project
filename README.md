@@ -22,3 +22,14 @@ domains - whois
 ![image](https://user-images.githubusercontent.com/50552002/176748646-5f5aff13-9258-4584-9350-abc2a022c84d.png)
 
 ### Domains output :
+
+
+## Prerequisite
+
+Project use python 2.7
+
+<code>pip install -r requirements.txt</code>
+
+## Usage
+
+python iocsint.py
